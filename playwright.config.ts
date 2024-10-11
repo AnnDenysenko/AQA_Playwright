@@ -1,4 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
+import * as dotenv from 'dotenv';
+
+// Uploading env variables  from .env file
+dotenv.config();
 
 /**
  * Read environment variables from file.
@@ -24,10 +28,10 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   use: {
-    baseURL: 'https://qauto.forstudy.space',
+    baseURL: process.env.BASE_URL || 'https://qauto.forstudy.space',
     httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto',
+      username: process.env.HTTP_CREDENTIALS_USERNAME || 'guest',
+      password: process.env.HTTP_CREDENTIALS_PASSWORD || 'welcome2qauto'
     },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
