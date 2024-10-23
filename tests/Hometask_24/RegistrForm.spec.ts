@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../page-objects/pages/HomePage";
+import generateRandomEmail from "../../utils (helpers)/randomEmailGenerator";
+import { mainUserEmail, mainUserPassword, randomUserEmail } from "../../test-data/credentials";
 
 test.describe("Registration Form Tests", () => {
   let homePage: HomePage;
