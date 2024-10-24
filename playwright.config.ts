@@ -1,5 +1,5 @@
-import { defineConfig, devices } from '@playwright/test';
-import * as dotenv from 'dotenv';
+import { defineConfig, devices } from "@playwright/test";
+import * as dotenv from "dotenv";
 
 // Uploading env variables  from .env file
 dotenv.config();
@@ -16,7 +16,7 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,22 +26,32 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: "html",
   use: {
-    baseURL: process.env.BASE_URL || 'https://qauto.forstudy.space',
+    baseURL: process.env.BASE_URL || "https://qauto.forstudy.space",
     httpCredentials: {
-      username: process.env.HTTP_CREDENTIALS_USERNAME || 'guest',
-      password: process.env.HTTP_CREDENTIALS_PASSWORD || 'welcome2qauto'
+      username: process.env.HTTP_CREDENTIALS_USERNAME || "guest",
+      password: process.env.HTTP_CREDENTIALS_PASSWORD || "welcome2qauto",
     },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
+    headless: false, // Run in headless mode or not
+    viewport: { width: 1280, height: 720 }, // Browser viewport size
+    actionTimeout: 0, // Default action timeout
+    video: "on-first-retry", // Capture video only on the first retry of a failed test
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
+    },
+
+    {
+      name: "api",
+      use: { ...devices["Desktop Chrome"] },
+      testMatch: "*api/*.ts",
     },
 
     // {

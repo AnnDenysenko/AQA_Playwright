@@ -32,3 +32,7 @@ We suggest that you begin by typing:
       username: 'guest',
       password: 'welcome2qauto',
     },
+
+
+
+    const BASE_URL = "https://guest:welcome2qauto@qauto.forstudy.space";
