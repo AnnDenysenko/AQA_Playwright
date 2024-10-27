@@ -1,6 +1,11 @@
 import generateRandomEmail from "../utils (helpers)/randomEmailGenerator";
 
-export const mainUserEmail = 'user1.anna@test.com';
-export const mainUserPassword = 'TestPassword1';
-export const randomUserEmail = generateRandomEmail();
+// main user
+export const mainUserEmail = "anna.denysenko@gmail.com";
+export const mainUserPassword = "Hillel2024";
 
+// additional user
+export const mainUserEmail2 = "test-anna.denisenkooo@gmail.com";
+export const mainUserPassword2 = "Hillel2024";
+
+export const randomUserEmail = generateRandomEmail();

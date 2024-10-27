@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:even="http://events.dpdinfoservices.dpd.com.pl/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <even:getEventsForWaybillV1>
+            <even:waybill>13449300568253</even:waybill>
+            <even:authDataV1>
+                <even:login>30364701</even:login>
+                <even:masterFid>303647</even:masterFid>
+                <even:password>qVLItmzZbIwjGHPR</even:password>
+            </even:authDataV1>
+            <even:eventsSelectType>ALL</even:eventsSelectType>
+            <even:language>EN</even:language>
+        </even:getEventsForWaybillV1>
+    </soapenv:Body>
+</soapenv:Envelope>
