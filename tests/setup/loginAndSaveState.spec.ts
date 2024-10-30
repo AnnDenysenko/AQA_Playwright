@@ -33,7 +33,7 @@ test.describe("Setup", () => {
       .storageState({ path: "test-data/states/mainUserState.json" });
   });
 
-  test("Log in to main user 2 and save the state", async ({ page }) => {
+  test("Log in to user 2 and save the state", async ({ page }) => {
     await homePage.open();
     await homePage.openSignInForm();
 
