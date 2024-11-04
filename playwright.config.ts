@@ -35,7 +35,7 @@ export default defineConfig({
     },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    headless: false, // Run in headless mode or not
+    headless: true, // Run in headless mode or not
     viewport: { width: 1280, height: 720 }, // Browser viewport size
     actionTimeout: 0, // Default action timeout
     video: "on-first-retry", // Capture video only on the first retry of a failed test
