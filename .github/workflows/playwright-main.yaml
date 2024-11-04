@@ -23,7 +23,9 @@ jobs:
 
       # Running Playwright tests
       - name: Run Playwright tests
-        run: npx playwright test --headless
+        env:
+          CI: true
+        run: npx playwright test
 
       # Uploading test results
       - name: Upload Playwright report
