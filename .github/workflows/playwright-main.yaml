@@ -10,22 +10,22 @@ jobs:
   playwright-run:
     runs-on: ubuntu-latest
     container:
-      # Використання Docker-образу Playwright
-      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+      # Using Docker-image Playwright
+      image: mcr.microsoft.com/playwright:v1.47.2-jammy
 
     steps:
-      # Завантаження коду репозиторію
+      # Uploading repository code
       - uses: actions/checkout@v4
 
-      # Встановлення залежностей проекту
+      # Installing project dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Запуск Playwright тестів
+      # Running Playwright tests
       - name: Run Playwright tests
         run: npx playwright test
 
-      # Завантаження звітів про результати тестування
+      # Uploading test results
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v3
