@@ -23,7 +23,7 @@ jobs:
 
       # Running Playwright tests
       - name: Run Playwright tests
-        run: npx playwright test --headed=false
+        run: npx playwright test --headless
 
       # Uploading test results
       - name: Upload Playwright report
